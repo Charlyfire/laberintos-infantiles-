@@ -16,6 +16,15 @@ Descarga el repositorio y abre `index.html` en un navegador moderno. No hace fal
 
 También puedes servir esta carpeta con `python -m http.server 8000` y visitar `http://localhost:8000`.
 
+## Netlify
+
+El repositorio incluye `netlify.toml`: publica la carpeta raíz y no necesita comando de compilación ni dependencias.
+
+1. Abre [Netlify](https://app.netlify.com/start) y elige importar un proyecto de GitHub.
+2. Selecciona `Charlyfire/laberintos-infantiles-` y la rama `main`.
+3. Deja vacío el comando de compilación; la carpeta de publicación es `.`.
+4. Publica el proyecto. Netlify asignará un enlace para jugar y publicará automáticamente los siguientes cambios de `main`.
+
 ## GitHub Pages
 
 En **Settings → Pages → Build and deployment**, selecciona **Deploy from a branch**, rama **main** y carpeta **/ (root)**. Guarda para publicar la aplicación. La publicación requiere activar esa configuración del repositorio.
@@ -26,5 +35,6 @@ En **Settings → Pages → Build and deployment**, selecciona **Deploy from a b
 - `styles.css`: diseño y adaptación de pantalla.
 - `app.js`: generación, juego, pistas y sonido.
 - `assets/bosque.webp`: ilustración original.
+- `netlify.toml`: configuración de publicación en Netlify.
 
 Las edades son orientativas; el nivel puede elegirse según cada niño. El nivel más sencillo limita la longitud del camino y tiene casillas grandes.
