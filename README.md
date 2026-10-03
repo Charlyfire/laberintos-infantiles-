@@ -4,9 +4,11 @@ Aplicación infantil en HTML, CSS y JavaScript para generar y jugar laberintos, 
 
 - Cuatro dificultades orientativas: 3, 4, 5 y 6–7 años.
 - Aventuras en el bosque, el océano y el espacio.
-- Laberintos nuevos generados aleatoriamente, siempre con solución.
+- Laberintos nuevos generados aleatoriamente, siempre con solución. El recorrido correcto incluye bifurcaciones y caminos sin salida según la edad: al menos 1, 2, 4 y 5 puntos de decisión respectivamente. En 6–7 años, cada desvío contado tiene al menos tres casillas.
 - Dibujo del recorrido con dedo, lápiz de PDI o ratón: el personaje permanece en la salida. El trazo se detiene en las paredes, también en movimientos rápidos y diagonales.
 - Laberintos horizontales de 6 × 3, 8 × 4, 10 × 5 y 12 × 6 casillas.
+- Altura de salida regulable: abajo (por defecto), centro o arriba. La llegada se coloca al otro lado del tablero.
+- Paredes más gruesas con acabado de seto o ladrillo. Al tocar o intentar cruzar una pared, las paredes parpadean dos veces en rojo; con movimiento reducido se muestra un aviso rojo continuo.
 - Pantallas separadas de inicio, ajustes y juego. El laberinto ocupa la pantalla durante la partida.
 - Dibujo asistido y pistas automáticas configurables; se recomiendan para 3–4 años.
 - Continuación del trazo después de levantar el dedo. Retrocede por tu propio recorrido para corregirlo.
@@ -26,7 +28,7 @@ También puedes servir esta carpeta con `python -m http.server 8000` y visitar `
 
 ## Jugar en tablet o PDI
 
-El adulto elige el nivel y los ajustes antes de comenzar. Toca **¡Vamos a dibujar!** y dibuja desde el círculo de salida hasta el destino. Si levantas el dedo, continúa en el punto dorado. Las paredes detienen el trazo; vuelve al punto para seguir por otro camino. El personaje no se arrastra.
+El adulto elige el nivel y los ajustes antes de comenzar. En **Altura de la salida** puede situar el inicio abajo, en el centro o arriba; en **Aspecto de las paredes** puede elegir seto o ladrillo. Toca **¡Vamos a dibujar!** y dibuja desde el círculo de salida hasta el destino. Si levantas el dedo, continúa en el punto dorado. Las paredes detienen el trazo; vuelve al punto para seguir por otro camino. El personaje no se arrastra.
 
 El juego utiliza toda el área disponible y solicita pantalla completa al empezar si está activada. La pantalla completa y el bloqueo de orientación dependen del navegador; si no se admiten, gira la tablet manualmente. El juego sigue funcionando sin ellos.
 
@@ -57,6 +59,6 @@ En **Settings → Pages → Build and deployment**, selecciona **Deploy from a b
 
 ## Comprobaciones
 
-Ejecuta `node tests/maze-core.test.cjs`. Comprueba 400 laberintos, paredes simétricas, límites de dificultad, bloqueos de trazos rápidos y diagonales y recorridos completos en ambos sentidos.
+Ejecuta `node tests/maze-core.test.cjs`. Comprueba 1200 laberintos (cuatro niveles y tres alturas), paredes simétricas, conectividad, límites de dificultad, bifurcaciones con desvíos de profundidad suficiente, generación con fuentes aleatorias constantes, márgenes de colisión y bloqueos de trazos rápidos y diagonales.
 
 Las edades son orientativas; el nivel puede elegirse según cada niño. El nivel más sencillo limita la longitud del camino y tiene casillas grandes.
